@@ -22,23 +22,30 @@ const VerticalNavBar = () => (
         <LinkItem>
           <StyledLink to="#">
             <LinkIcon className="fas fa-search" />
-            Search
+            <span>Search</span>
           </StyledLink>
         </LinkItem>
+
         <LinkItem>
-          {" "}
           <StyledLink to="/library" bsClass="link">
             <LinkIcon className="fas fa-list" />
-            Shows
+            <span>Shows</span>
           </StyledLink>
         </LinkItem>
+
         <LinkItem>
           <StyledLink to="#">
             <LinkIcon className="fas fa-star" />
-            Favorites
+            <span>Favorites</span>
           </StyledLink>
         </LinkItem>
-        <LinkItem>Explore</LinkItem>
+
+        <LinkItem>
+          <StyledLink>
+            <LinkIcon className="fas fa-star" />
+            <span>Explore</span>
+          </StyledLink>
+        </LinkItem>
       </LinkList>
     </LinkContainer>
   </VerticalNavBarContainer>

@@ -7,16 +7,16 @@ import AuthService from "../../services/auth.service";
 import UserService from "../../services/user.service";
 
 const linkStyle = {
-  // float: "left",
-  padding: "14px 25px",
-  lineHeight: "75px",
+  padding: "10px 20px",
+  lineHeight: "10px",
   textAlign: "center",
-  margin: "1rem",
+  fontSize: "1.2rem",
+  margin: "0px 25px",
   color: "#B3B3B3",
   backgroundColor: "#181818",
   borderColor: "#FFFFFF",
-  borderWidth: "5px",
-  borderRadius: "200px",
+  borderWidth: "3px",
+  borderRadius: "20px",
   borderStyle: "solid",
 };
 
@@ -30,22 +30,27 @@ export class UserIcon extends React.Component {
     const renderAuthButton = () => {
       if (UserService.isAuth()) {
         return (
-          <>
+          <div>
             <Link style={linkStyle} href="/signout" onClick={logout}>
               Log out
             </Link>
-          </>
+          </div>
         );
       }
       return (
-        <>
+        <div
+          style={{
+            display: "flex",
+            marginLeft: "auto",
+          }}
+        >
           <Link style={linkStyle} href="/signin">
             Log-in
           </Link>
           <Link style={linkStyle} href="/signup">
             Sign up
           </Link>
-        </>
+        </div>
       );
     };
 

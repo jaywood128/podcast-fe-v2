@@ -1,14 +1,12 @@
 import React from "react";
-import TopBarStylesContainer from "./TopBarStylesContainer";
+import { TopBarStylesContainer, TitleLink } from "./TopBarStylesContainer";
 // eslint-disable-next-line import/no-named-as-default
 import UserIcon from "./UserIcon";
 
 const TopBarContainer = () => (
   <TopBarStylesContainer>
-    <header>
-      Header
-      <UserIcon />
-    </header>
+    <TitleLink to="/home">P-Cast Blast</TitleLink>
+    <UserIcon />
   </TopBarStylesContainer>
 );
 

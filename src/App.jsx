@@ -4,13 +4,14 @@ import styled from "styled-components";
 // eslint-disable-next-line no-unused-vars
 import ReactDOM from "react-dom";
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { createBrowserHistory } from "history";
-// import Home from "./views/Home";
+import { Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import Home from "./views/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
-import TopBar from "./components/header/TopBar";
-import ViewContainer from "./views/ViewContainer/ViewContainer";
-// const history = createBrowserHistory();
+import TopBar from "./components/header/TopBarContainer";
+// import BodyContainer from "./views/Body/BodyContainer";
+
+const history = createBrowserHistory();
 
 const AppContainer = styled.div`
   display: flex;
@@ -18,27 +19,28 @@ const AppContainer = styled.div`
   height: 100vh;
   width: 100vw;
 `;
-const TopBarContentViewContainer = styled.div`
+
+const BodyContainer = styled.div`
   display: flex;
-  background-color: green;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  background-color: lightcyan;
 `;
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <AppContainer>
         <VerticalNavBar />
-        <TopBarContentViewContainer>
+        <BodyContainer>
           <TopBar />
-          <ViewContainer />
-        </TopBarContentViewContainer>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </BodyContainer>
       </AppContainer>
-      {/* <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch> */}
     </Router>
   );
 }
