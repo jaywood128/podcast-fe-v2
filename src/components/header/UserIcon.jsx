@@ -44,10 +44,10 @@ export class UserIcon extends React.Component {
             marginLeft: "auto",
           }}
         >
-          <Link style={linkStyle} href="/signin">
+          <Link style={linkStyle} to="/signin">
             Log-in
           </Link>
-          <Link style={linkStyle} href="/signup">
+          <Link style={linkStyle} to="/signup">
             Sign up
           </Link>
         </div>

@@ -6,9 +6,12 @@ import ReactDOM from "react-dom";
 // eslint-disable-next-line no-unused-vars
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
+// eslint-disable-next-line no-unused-vars
 import Home from "./views/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
 import TopBar from "./components/header/TopBarContainer";
+import SignIn from "./views/user-actions/SignIn";
+import Signup from "./views/user-actions/Signup";
 // import BodyContainer from "./views/Body/BodyContainer";
 
 const history = createBrowserHistory();
@@ -38,6 +41,8 @@ function App() {
             <Route path="/">
               <Home />
             </Route>
+            <Route component={SignIn} />
+            <Route component={Signup} />
           </Switch>
         </BodyContainer>
       </AppContainer>
