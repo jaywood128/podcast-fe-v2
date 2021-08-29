@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import NoImageAvailible from "./icons8-image-not-available-96 copy.png";
 
 const PodcastStylesContainer = styled(Link)`
   color: white;
@@ -19,7 +20,12 @@ const TitleContainer = styled.h1`
   text-align: center;
 `;
 
-const ImageContainer = styled.div``;
+const ImageContainer = styled.img`
+  width: 100%;
+`;
+ImageContainer.defaultProps = {
+  src: NoImageAvailible,
+};
 
 const StyledImage = styled.img``;
 

@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const VerticalNavBarContainer = styled("div")`
-  background-color: #181818;
+  background-color: #121212;
   color: #b3b3b3;
   height: 100vh;
   width: 20vw;
   display: flex;
   flex-direction: column;
+  font-family: "Poppins";
 `;
 const IconContainer = styled.div`
   display: flex;

@@ -3,7 +3,6 @@ import {
   VerticalNavBarContainer,
   IconContainer,
   LinkContainer,
-  LinkTitle,
   LinkList,
   LinkItem,
   LinkIcon,
@@ -16,8 +15,6 @@ const VerticalNavBar = () => (
       <i className="fas fa-podcast fa-5x" />
     </IconContainer>
     <LinkContainer>
-      <LinkTitle>Sidebar </LinkTitle>
-
       <LinkList>
         <LinkItem>
           <StyledLink to="#">

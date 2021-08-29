@@ -1,35 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import PodcastContainer from "../components/podcast/PodcastContainer";
-
-const ViewContainer = styled.div`
-  overflow: auto;
-  background-color: #121212;
-  height: 82vh;
-  width: 83vw;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-const CategoryTitle = styled.h2`
-  color: white !important;
-  text-transform: uppercase;
-  font-size: 2rem;
-  text-align: center;
-  text-shadow: 2px 2px 10px white;
-`;
-
-const PodcastRow = styled.div`
-  display: flex;
-  align-content: space-between;
-  overflow: auto;
-  margin-left: 20px;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
+import ViewContainerStylings from "./Body/ViewContainerStyling";
+import PodcastRowStylingsContainer from "../components/podcast/PodcastRowStylingsContainer";
+import CategoryTitleStylingsContainer from "../components/component-stylings/CategoryTitleStylingsContainer";
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
@@ -53,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <ViewContainer>
+    <ViewContainerStylings>
       View Container
       <div>
         Featured
@@ -61,16 +35,19 @@ const Home = () => {
         {featured.map((category) => (
           // eslint-disable-next-line react/jsx-key
           <div>
-            <CategoryTitle key={category.id}> {category.title} </CategoryTitle>
-            <PodcastRow>
+            <CategoryTitleStylingsContainer key={category.id}>
+              {" "}
+              {category.title}{" "}
+            </CategoryTitleStylingsContainer>
+            <PodcastRowStylingsContainer>
               {category.podcasts.map((podcast) => (
                 <PodcastContainer podcast={podcast} key={podcast.id} />
               ))}
-            </PodcastRow>
+            </PodcastRowStylingsContainer>
           </div>
         ))}
       </div>
-    </ViewContainer>
+    </ViewContainerStylings>
   );
 };
 

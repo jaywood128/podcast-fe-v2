@@ -1,20 +1,19 @@
 import React from "react";
-import "./App.css";
 import styled from "styled-components";
 // eslint-disable-next-line no-unused-vars
-import ReactDOM from "react-dom";
-// eslint-disable-next-line no-unused-vars
-import { Router, Switch, Route } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { createBrowserHistory } from "history";
 // eslint-disable-next-line no-unused-vars
 import Home from "./views/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
 import TopBar from "./components/header/TopBarContainer";
-import SignIn from "./views/user-actions/SignIn";
-import Signup from "./views/user-actions/Signup";
+import RecentEpisodesContainer from "./components/episode/RecentEpisodesContainer";
+// import SignIn from "./views/user-actions/SignIn";
+// import Signup from "./views/user-actions/Signup";
+// import RecentEpisodesContainer from "./components/episode/RecentEpisodesContainer";
 // import BodyContainer from "./views/Body/BodyContainer";
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 const AppContainer = styled.div`
   display: flex;
@@ -32,17 +31,18 @@ const BodyContainer = styled.div`
 
 function App() {
   return (
-    <Router history={history}>
+    <Router>
       <AppContainer>
         <VerticalNavBar />
         <BodyContainer>
           <TopBar />
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
-            <Route component={SignIn} />
-            <Route component={Signup} />
+            <Route path="/episodes">
+              <RecentEpisodesContainer />
+            </Route>
           </Switch>
         </BodyContainer>
       </AppContainer>
