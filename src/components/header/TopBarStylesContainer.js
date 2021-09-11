@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const TopBarStylesContainer = styled.header`
+  /* background-color: #181818; */
   background-color: #181818;
   display: flex;
   align-items: center;

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ViewContainerStylings from "../../views/Body/ViewContainerStyling";
 import {
   RecentEpisodesStyleContainer,
@@ -13,6 +13,7 @@ import {
 import EpisodeContainer from "./EpisodeContainer";
 
 const RecentEpisodesContainer = () => {
+  const { id } = useParams();
   const [episodes, setEpisodes] = useState([]);
   const BACKEND_PODCASTS = "http://127.0.0.1:8080/api/";
 
@@ -27,12 +28,7 @@ const RecentEpisodesContainer = () => {
     };
 
     axios
-      .get(
-        `${BACKEND_PODCASTS}${localStorage.getItem(
-          "id"
-        )}/podcasts/${localStorage.getItem("podcast-id")}`,
-        settings
-      )
+      .get(`${BACKEND_PODCASTS}podcasts/${id}`, settings)
       .then((response) => {
         // eslint-disable-next-line no-console
         console.log(

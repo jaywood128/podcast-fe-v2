@@ -17,7 +17,7 @@ const VerticalNavBar = () => (
     <LinkContainer>
       <LinkList>
         <LinkItem>
-          <StyledLink to="#">
+          <StyledLink to="/">
             <LinkIcon className="fas fa-search" />
             <span>Search</span>
           </StyledLink>
@@ -31,14 +31,14 @@ const VerticalNavBar = () => (
         </LinkItem>
 
         <LinkItem>
-          <StyledLink to="#">
+          <StyledLink to="/">
             <LinkIcon className="fas fa-star" />
             <span>Favorites</span>
           </StyledLink>
         </LinkItem>
 
         <LinkItem>
-          <StyledLink>
+          <StyledLink to="/">
             <LinkIcon className="fas fa-star" />
             <span>Explore</span>
           </StyledLink>

@@ -1,27 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
-// import styled from "styled-components";
-// eslint-disable-next-line import/no-useless-path-segments
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import AuthService from "../../services/auth.service";
-// eslint-disable-next-line import/no-useless-path-segments
 import UserService from "../../services/user.service";
+import { LinkIcon } from "../vertical-nav-bar/VerticalNavBarStyles";
+import { UserIconLinkContainer, StyledUserLink } from "./UserIconStyles";
 
-const linkStyle = {
-  padding: "10px 20px",
-  lineHeight: "10px",
-  textAlign: "center",
-  fontSize: "16px !important",
-  fontFamily: "Poppins",
-  margin: "0px 25px",
-  color: "#FFFFFF",
-  backgroundColor: "#181818",
-  borderColor: "#FFFFFF",
-  borderWidth: "3px",
-  borderRadius: "20px",
-  borderStyle: "solid",
-};
-
-// eslint-disable-next-line react/prefer-stateless-function
 export class UserIcon extends React.Component {
   render() {
     const logout = () => {
@@ -31,27 +14,22 @@ export class UserIcon extends React.Component {
     const renderAuthButton = () => {
       if (UserService.isAuth()) {
         return (
-          <div>
-            <Link style={linkStyle} href="/signout" onClick={logout}>
-              Log out
-            </Link>
-          </div>
+          <UserIconLinkContainer>
+            <StyledUserLink to="/signout" onClick={logout}>
+              <FaSignOutAlt />
+            </StyledUserLink>
+          </UserIconLinkContainer>
         );
       }
       return (
-        <div
-          style={{
-            display: "flex",
-            marginLeft: "auto",
-          }}
-        >
-          <Link style={linkStyle} to="/signin">
-            Log-in
-          </Link>
-          <Link style={linkStyle} to="/signup">
-            Sign up
-          </Link>
-        </div>
+        <UserIconLinkContainer>
+          <StyledUserLink to="/signin">
+            <FaSignInAlt />
+          </StyledUserLink>
+          <StyledUserLink to="/signup">
+            <LinkIcon className="fas fa-user-plus" />
+          </StyledUserLink>
+        </UserIconLinkContainer>
       );
     };
 

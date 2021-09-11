@@ -5,14 +5,20 @@ import {
   TitleContainer,
   ImageContainer,
   StyledImage,
+  CardTop,
+  StyledTitle,
 } from "./PodcastStylesContainer";
 
-const PodcastContainer = ({ podcast, id }) => (
-  <PodcastStylesContainer key={id} to="/episodes">
-    <TitleContainer>{podcast.title}</TitleContainer>
-    <ImageContainer>
-      <StyledImage src={podcast.image} />
-    </ImageContainer>
+const PodcastContainer = ({ podcast }) => (
+  <PodcastStylesContainer key={podcast.id} to={`/episodes/${podcast.id}`}>
+    <CardTop>
+      <ImageContainer>
+        <StyledImage src={podcast.image} />
+      </ImageContainer>
+    </CardTop>
+    <TitleContainer>
+      <StyledTitle>{podcast.title}</StyledTitle>
+    </TitleContainer>
   </PodcastStylesContainer>
 );
 

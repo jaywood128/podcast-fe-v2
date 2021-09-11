@@ -8,7 +8,8 @@ const VerticalNavBarContainer = styled("div")`
   width: 20vw;
   display: flex;
   flex-direction: column;
-  font-family: "Poppins";
+  font-family: "Raleway";
+  font-size: 1.5rem;
 `;
 const IconContainer = styled.div`
   display: flex;

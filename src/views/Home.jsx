@@ -11,7 +11,7 @@ const Home = () => {
 
   const getFeatured = () => {
     axios
-      .get(`http://localhost:8080/api/curated_podcasts`)
+      .get("http://127.0.0.1:8080/api/curated_podcasts")
       .then((response) => {
         const featuredRes = response.data[0].curated_lists;
         // eslint-disable-next-line no-console
@@ -28,16 +28,11 @@ const Home = () => {
 
   return (
     <ViewContainerStylings>
-      View Container
       <div>
-        Featured
-        {/* // eslint-disable-next-line camelcase */}
         {featured.map((category) => (
-          // eslint-disable-next-line react/jsx-key
-          <div>
-            <CategoryTitleStylingsContainer key={category.id}>
-              {" "}
-              {category.title}{" "}
+          <div key={category.id}>
+            <CategoryTitleStylingsContainer>
+              {category.title}
             </CategoryTitleStylingsContainer>
             <PodcastRowStylingsContainer>
               {category.podcasts.map((podcast) => (
