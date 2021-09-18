@@ -5,7 +5,7 @@ import UserIcon from "./UserIcon";
 
 const TopBarContainer = () => (
   <TopBarStylesContainer>
-    <TitleLink to="/home">P-Cast Blast</TitleLink>
+    <TitleLink to="/home"> Home </TitleLink>
     <UserIcon />
   </TopBarStylesContainer>
 );

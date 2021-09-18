@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const CategoryTitleStylingsContainer = styled.div`
   color: white !important;
-  /* font-family: "Roboto Mono", monospace; */
   font-family: "Gothic A1", sans-serif;
   text-transform: uppercase;
   font-size: 2rem;

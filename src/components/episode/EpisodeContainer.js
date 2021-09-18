@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const EpisodeContainer = styled.div`
-  font-family: "Poppins";
+  font-family: "Gothic A1, sans-serif";
 
   .img {
     width: 10px;

@@ -37,7 +37,7 @@ function App() {
         <BodyContainer>
           <TopBar />
           <Switch>
-            <Route path="/episodes/:id">
+            <Route path="/episodes/:podcastTitle/:id/">
               <RecentEpisodesContainer />
             </Route>
             <Route exact path="/">

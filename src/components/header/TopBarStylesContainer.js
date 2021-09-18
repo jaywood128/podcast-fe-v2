@@ -8,7 +8,7 @@ const TopBarStylesContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 20vh;
+  height: 10vh;
   margin-bottom: 0;
 `;
 

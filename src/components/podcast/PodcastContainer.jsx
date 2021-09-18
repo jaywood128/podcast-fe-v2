@@ -10,7 +10,10 @@ import {
 } from "./PodcastStylesContainer";
 
 const PodcastContainer = ({ podcast }) => (
-  <PodcastStylesContainer key={podcast.id} to={`/episodes/${podcast.id}`}>
+  <PodcastStylesContainer
+    key={podcast.id}
+    to={`/episodes/${podcast.title}/${podcast.id}`}
+  >
     <CardTop>
       <ImageContainer>
         <StyledImage src={podcast.image} />
