@@ -31,8 +31,11 @@ const EpisodeImage = styled.img`
 
 const EpisodeRowContainer = styled.div`
   display: flex;
-  align-content: space-between;
+  flex: 50%;
+  align-items: center;
   font-family: "Raleway";
+  padding: 20px;
+  width: 75%;
   margin: 20px;
   font-size: 1rem;
   border-radius: 20px;
@@ -41,11 +44,11 @@ const EpisodeRowContainer = styled.div`
   color: #b3b3b3;
 `;
 
-const HorizontalLineStylings = styled.hr`
+const HorizontalLineStylings = styled.div`
   display: "block";
-  height: "1px";
+  /* height: "1px"; */
   border: "0";
-  border-top: "1px solid #FFFFF";
+  /* border-top: "1px solid #FFFFF"; */
   margin: "1em 0";
   padding: "0";
 `;
@@ -53,6 +56,7 @@ const HorizontalLineStylings = styled.hr`
 const EpisodesHeaderContainer = styled.div`
   display: flex;
   padding: 5px 28px;
+  align-items: center;
   color: white !important;
   font-family: "Gothic A1", sans-serif;
   text-transform: uppercase;
@@ -60,6 +64,7 @@ const EpisodesHeaderContainer = styled.div`
   text-align: center;
 `;
 const EpisodesHeaderStylings = styled.header`
+  text-shadow: 3px 4px 4px black;
   margin-left: 20px;
 `;
 const AudioLinkContainer = styled.div`
@@ -78,7 +83,7 @@ const StyledPlayLink = styled.a`
   color: white;
   text-align: left;
   text-decoration: none;
-  padding: 20px 20px;
+  /* padding: 20px 20px; */
   border: 1.5px;
   border-radius: 50%;
 

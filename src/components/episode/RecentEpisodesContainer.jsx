@@ -74,7 +74,7 @@ const RecentEpisodesContainer = () => {
             return (
               <div key={episode.id}>
                 {index === 0 ? (
-                  <EpisodeContainer key={episode.id}>
+                  <div style={{ padding: "20px" }}>
                     <EpisodesHeaderContainer>
                       <HeaderImageContainer>
                         <StyledImage src={episode.image} alt="podcast" />{" "}
@@ -83,72 +83,82 @@ const RecentEpisodesContainer = () => {
                         {podcastTitle}
                       </EpisodesHeaderStylings>
                     </EpisodesHeaderContainer>
-                    <HorizontalLineStylings />
-                    <EpisodeRowContainer>
-                      <EpisodeImage alt="Not Availiable" src={episode.image} />
+                    <EpisodeContainer key={episode.id}>
+                      <HorizontalLineStylings />
+                      <EpisodeRowContainer>
+                        <EpisodeImage
+                          alt="Not Availiable"
+                          src={episode.image}
+                        />
 
-                      <EpisodeTitleContainer>
-                        <EpisodeTitle>{episode.title} </EpisodeTitle>
-                        <EpisodeDescriptionContainer>
-                          <p
-                            style={{
-                              lineHeight: "30px",
-                              font: "#404040",
-                              margin: "20px",
-                            }}
-                          >
-                            {episode.description.length > 370
-                              ? `${episode.description
-                                  .substring(0, 370)
-                                  .replace(/<[^>]*>?/gm, "")}...`
-                              : episode.description}
-                          </p>
-                          <AudioLinkContainer>
-                            <StyledPlayLink
-                              href={episode.audio}
-                              target="_blank"
+                        <EpisodeTitleContainer>
+                          <EpisodeTitle>{episode.title} </EpisodeTitle>
+                          <EpisodeDescriptionContainer>
+                            <p
+                              style={{
+                                lineHeight: "30px",
+                                font: "#404040",
+                                margin: "20px",
+                              }}
                             >
-                              <FaPlayCircle size={30} />
-                            </StyledPlayLink>{" "}
-                          </AudioLinkContainer>
-                        </EpisodeDescriptionContainer>
-                      </EpisodeTitleContainer>
-                    </EpisodeRowContainer>
-                    <HorizontalLineStylings />
-                  </EpisodeContainer>
+                              {episode.description.length > 370
+                                ? `${episode.description
+                                    .substring(0, 370)
+                                    .replace(/<[^>]*>?/gm, "")}...`
+                                : episode.description}
+                            </p>
+                            <AudioLinkContainer>
+                              <StyledPlayLink
+                                href={episode.audio}
+                                target="_blank"
+                              >
+                                <FaPlayCircle size={30} />
+                              </StyledPlayLink>{" "}
+                            </AudioLinkContainer>
+                          </EpisodeDescriptionContainer>
+                        </EpisodeTitleContainer>
+                      </EpisodeRowContainer>
+                      <HorizontalLineStylings />
+                    </EpisodeContainer>
+                  </div>
                 ) : (
-                  <EpisodeContainer key={episode.id}>
-                    <EpisodeRowContainer>
-                      <EpisodeImage alt="Not Availiable" src={episode.image} />
-                      <EpisodeTitleContainer>
-                        <EpisodeTitle>{episode.title} </EpisodeTitle>
-                        <EpisodeDescriptionContainer>
-                          <p
-                            style={{
-                              lineHeight: "30px",
-                              font: "#404040",
-                              margin: "20px",
-                            }}
-                          >
-                            {episode.description.length > 370
-                              ? `${episode.description
-                                  .substring(0, 370)
-                                  .replace(/<[^>]*>?/gm, "")}...`
-                              : episode.description}
-                          </p>
-                          <AudioLinkContainer>
-                            <StyledPlayLink
-                              href={episode.audio}
-                              target="_blank"
+                  <div style={{ padding: "20px" }}>
+                    <EpisodeContainer key={episode.id}>
+                      <EpisodeRowContainer>
+                        <EpisodeImage
+                          alt="Not Availiable"
+                          src={episode.image}
+                        />
+                        <EpisodeTitleContainer>
+                          <EpisodeTitle>{episode.title} </EpisodeTitle>
+                          <EpisodeDescriptionContainer>
+                            <p
+                              style={{
+                                lineHeight: "30px",
+                                font: "#404040",
+                                margin: "20px",
+                              }}
                             >
-                              <FaPlayCircle size={30} />
-                            </StyledPlayLink>{" "}
-                          </AudioLinkContainer>
-                        </EpisodeDescriptionContainer>
-                      </EpisodeTitleContainer>
-                    </EpisodeRowContainer>
-                    <HorizontalLineStylings />
-                  </EpisodeContainer>
+                              {episode.description.length > 370
+                                ? `${episode.description
+                                    .substring(0, 370)
+                                    .replace(/<[^>]*>?/gm, "")}...`
+                                : episode.description}
+                            </p>
+                            <AudioLinkContainer>
+                              <StyledPlayLink
+                                href={episode.audio}
+                                target="_blank"
+                              >
+                                <FaPlayCircle size={30} />
+                              </StyledPlayLink>{" "}
+                            </AudioLinkContainer>
+                          </EpisodeDescriptionContainer>
+                        </EpisodeTitleContainer>
+                      </EpisodeRowContainer>
+                      <HorizontalLineStylings />
+                    </EpisodeContainer>
+                  </div>
                 )}
               </div>
             );

@@ -33,7 +33,7 @@ const VerticalNavBar = () => (
         <LinkItem>
           <StyledLink to="/">
             <LinkIcon className="fas fa-star" />
-            <span>Favorites</span>
+            <span>Library</span>
           </StyledLink>
         </LinkItem>
 

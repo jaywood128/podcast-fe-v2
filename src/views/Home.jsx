@@ -15,7 +15,7 @@ const Home = () => {
       .then((response) => {
         const featuredRes = response.data[0].curated_lists;
         // eslint-disable-next-line no-console
-        console.log(`Response data ${response.data[0]}`);
+        // console.log(`Response data ${response}`);
         setFeatured(featuredRes);
       })
       // eslint-disable-next-line no-console
@@ -25,6 +25,8 @@ const Home = () => {
   useEffect(() => {
     getFeatured();
   }, []);
+  // eslint-disable-next-line no-console
+  console.log(featured);
 
   return (
     <ViewContainerStylings>
