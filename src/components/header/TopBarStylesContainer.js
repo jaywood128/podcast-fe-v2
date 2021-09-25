@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const TopBarStylesContainer = styled.header`
   /* background-color: #181818; */
-  background-color: #181818;
+  background-color: #404040;
   display: flex;
-  align-items: center;
+  justify-content: center;
   justify-content: space-between;
   width: 100%;
   height: 10vh;
@@ -21,4 +21,10 @@ const TitleLink = styled(Link)`
   font-family: "Poppins";
 `;
 
-export { TopBarStylesContainer, TitleLink };
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+`;
+
+export { TopBarStylesContainer, TitleLink, IconContainer };

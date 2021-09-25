@@ -8,14 +8,10 @@ const VerticalNavBarContainer = styled("div")`
   width: 20vw;
   display: flex;
   flex-direction: column;
-  font-family: "Raleway";
-  font-size: 1.5rem;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.2rem;
 `;
-const IconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-`;
+
 const LinkTitle = styled.h2`
   text-align: center;
 `;
@@ -26,10 +22,10 @@ const LinkContainer = styled.div`
 
 const StyledLink = styled(Link)`
   padding: 10px;
-  color: white;
+  color: #b3b3b3;
   text-decoration: none;
   :hover {
-    color: cyan;
+    color: white;
     text-shadow: 2px 2px 20px white;
   }
 `;
@@ -55,7 +51,6 @@ const LinkIcon = styled.i`
 
 export {
   VerticalNavBarContainer,
-  IconContainer,
   LinkTitle,
   LinkContainer,
   LinkItem,

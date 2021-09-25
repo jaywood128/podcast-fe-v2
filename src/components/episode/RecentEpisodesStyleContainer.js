@@ -27,6 +27,7 @@ const EpisodeImage = styled.img`
   width: 175px;
   height: 175px;
   border-radius: 20px;
+  box-shadow: 2px 5px 10px black;
 `;
 
 const EpisodeRowContainer = styled.div`
@@ -37,6 +38,21 @@ const EpisodeRowContainer = styled.div`
   padding: 20px;
   width: 75%;
   margin: 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  white-space: normal;
+  background-color: #404040;
+  color: #b3b3b3;
+`;
+
+const TopEpisodeRowContainer = styled.div`
+  display: flex;
+  flex: 50%;
+  align-items: center;
+  font-family: "Raleway";
+  padding: 20px;
+  width: 75%;
+  margin: 40px 20px 20px;
   font-size: 1rem;
   border-radius: 20px;
   white-space: normal;
@@ -107,4 +123,5 @@ export {
   AudioLinkContainer,
   StyledPlayLink,
   EpisodeTitleContainer,
+  TopEpisodeRowContainer,
 };

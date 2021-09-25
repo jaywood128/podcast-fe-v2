@@ -1,7 +1,6 @@
 import React from "react";
 import {
   VerticalNavBarContainer,
-  IconContainer,
   LinkContainer,
   LinkList,
   LinkItem,
@@ -11,9 +10,6 @@ import {
 // import { Link } from 'react-router-dom';
 const VerticalNavBar = () => (
   <VerticalNavBarContainer>
-    <IconContainer>
-      <i className="fas fa-podcast fa-5x" />
-    </IconContainer>
     <LinkContainer>
       <LinkList>
         <LinkItem>

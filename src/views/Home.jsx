@@ -32,7 +32,7 @@ const Home = () => {
     <ViewContainerStylings>
       <div>
         {featured.map((category) => (
-          <div key={category.id}>
+          <div key={category.id} style={{ marginTop: "40px" }}>
             <CategoryTitleStylingsContainer>
               {category.title}
             </CategoryTitleStylingsContainer>

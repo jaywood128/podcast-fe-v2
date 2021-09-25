@@ -17,6 +17,7 @@ import {
   EpisodeDescriptionContainer,
   StyledPlayLink,
   EpisodeTitleContainer,
+  TopEpisodeRowContainer,
 } from "./RecentEpisodesStyleContainer";
 import EpisodeContainer from "./EpisodeContainer";
 import { StyledImage } from "../podcast/PodcastStylesContainer";
@@ -24,13 +25,13 @@ import { StyledImage } from "../podcast/PodcastStylesContainer";
 const HeaderImageContainer = styled.div`
   display: flex;
   color: white;
-  background-color: orange;
   justify-content: center;
   align-items: center;
   height: 40%;
   width: 20%;
+  margin-top: 50px;
   border-radius: 25px;
-  box-shadow: 2px 2px 30px black;
+  box-shadow: 2px 5px 30px black;
 `;
 
 const RecentEpisodesContainer = () => {
@@ -74,7 +75,7 @@ const RecentEpisodesContainer = () => {
             return (
               <div key={episode.id}>
                 {index === 0 ? (
-                  <div style={{ padding: "20px" }}>
+                  <div style={{ padding: "0px 20px" }}>
                     <EpisodesHeaderContainer>
                       <HeaderImageContainer>
                         <StyledImage src={episode.image} alt="podcast" />{" "}
@@ -85,7 +86,7 @@ const RecentEpisodesContainer = () => {
                     </EpisodesHeaderContainer>
                     <EpisodeContainer key={episode.id}>
                       <HorizontalLineStylings />
-                      <EpisodeRowContainer>
+                      <TopEpisodeRowContainer>
                         <EpisodeImage
                           alt="Not Availiable"
                           src={episode.image}
@@ -117,12 +118,12 @@ const RecentEpisodesContainer = () => {
                             </AudioLinkContainer>
                           </EpisodeDescriptionContainer>
                         </EpisodeTitleContainer>
-                      </EpisodeRowContainer>
+                      </TopEpisodeRowContainer>
                       <HorizontalLineStylings />
                     </EpisodeContainer>
                   </div>
                 ) : (
-                  <div style={{ padding: "20px" }}>
+                  <div style={{ padding: "0px 20px" }}>
                     <EpisodeContainer key={episode.id}>
                       <EpisodeRowContainer>
                         <EpisodeImage
