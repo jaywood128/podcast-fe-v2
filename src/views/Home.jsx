@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PodcastContainer from "../components/podcast/PodcastContainer";
 import ViewContainerStylings from "./Body/ViewContainerStyling";
-import PodcastRowStylingsContainer from "../components/podcast/PodcastRowStylingsContainer";
+import CuratedPodcastsStylings from "../components/podcast/CuratedPodcastsStylings";
 import CategoryTitleStylingsContainer from "../components/component-stylings/CategoryTitleStylingsContainer";
 
 const Home = () => {
@@ -32,15 +32,15 @@ const Home = () => {
     <ViewContainerStylings>
       <div>
         {featured.map((category) => (
-          <div key={category.id} style={{ marginTop: "40px" }}>
+          <div key={category.id} style={{ marginTop: "20px" }}>
             <CategoryTitleStylingsContainer>
               {category.title}
             </CategoryTitleStylingsContainer>
-            <PodcastRowStylingsContainer>
+            <CuratedPodcastsStylings>
               {category.podcasts.map((podcast) => (
                 <PodcastContainer podcast={podcast} key={podcast.id} />
               ))}
-            </PodcastRowStylingsContainer>
+            </CuratedPodcastsStylings>
           </div>
         ))}
       </div>

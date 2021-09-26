@@ -2,11 +2,8 @@ import styled from "styled-components";
 
 const PodcastRowStylingsContainer = styled.div`
   display: flex;
-  align-content: space-between;
+  flex-wrap: wrap;
   overflow: auto;
   margin-left: 20px;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 `;
 export default PodcastRowStylingsContainer;

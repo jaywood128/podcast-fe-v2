@@ -19,8 +19,9 @@ const PodcastStylesContainer = styled(Link)`
   }
 `;
 const TitleContainer = styled.div`
-  padding: 1rem;
-  height: 50px;
+  padding: 0.5rem;
+  /* background-color: red; */
+  height: 25px;
   text-align: center;
 `;
 const StyledTitle = styled.span`

@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-// eslint-disable-next-line no-unused-vars
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-// import { createBrowserHistory } from "history";
-// eslint-disable-next-line no-unused-vars
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import Home from "./views/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
 import TopBar from "./components/header/TopBarContainer";
 import RecentEpisodesContainer from "./components/episode/RecentEpisodesContainer";
+import LibraryContainer from "./views/LibraryContainer";
 // import SignIn from "./views/user-actions/SignIn";
 // import Signup from "./views/user-actions/Signup";
-// import RecentEpisodesContainer from "./components/episode/RecentEpisodesContainer";
-// import BodyContainer from "./views/Body/BodyContainer";
 
-// const history = createBrowserHistory();
+const history = createBrowserHistory();
 
 const AppContainer = styled.div`
   display: flex;
@@ -31,7 +28,7 @@ const BodyContainer = styled.div`
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <AppContainer>
         <VerticalNavBar />
         <BodyContainer>
@@ -39,6 +36,9 @@ function App() {
           <Switch>
             <Route path="/episodes/:podcastTitle/:id/">
               <RecentEpisodesContainer />
+            </Route>
+            <Route path="/library">
+              <LibraryContainer />
             </Route>
             <Route exact path="/">
               <Home />

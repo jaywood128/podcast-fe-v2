@@ -71,6 +71,7 @@ const HorizontalLineStylings = styled.div`
 
 const EpisodesHeaderContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   padding: 5px 28px;
   align-items: center;
   color: white !important;
@@ -79,7 +80,7 @@ const EpisodesHeaderContainer = styled.div`
   font-size: 4rem;
   text-align: center;
 `;
-const EpisodesHeaderStylings = styled.header`
+const EpisodesHeaderStylings = styled.div`
   text-shadow: 3px 4px 4px black;
   margin-left: 20px;
 `;
@@ -99,7 +100,6 @@ const StyledPlayLink = styled.a`
   color: white;
   text-align: left;
   text-decoration: none;
-  /* padding: 20px 20px; */
   border: 1.5px;
   border-radius: 50%;
 
