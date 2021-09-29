@@ -1,68 +1,32 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import { FaPlayCircle, FaCheckCircle } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 // import UserService from "../../services/user.service";
-import ViewContainerStylings from "../../views/Body/ViewContainerStyling";
+import ViewContainerStylings from "../application/ApplicationContainerStyling";
 import {
   RecentEpisodesStyleContainer,
-  EpisodeTitle,
-  EpisodeImage,
   EpisodeRowContainer,
-  HorizontalLineStylings,
   EpisodesHeaderContainer,
-  AudioLinkContainer,
   EpisodesHeaderStylings,
-  EpisodeDescriptionContainer,
-  StyledPlayLink,
-  EpisodeTitleContainer,
-  TopEpisodeRowContainer,
+  // TopEpisodeRowContainer,
+  HeaderImageContainer,
+  FollowingContainer,
+  FollowingText,
+  AddPodcastButtonContainer,
+  FollowPodcastStylings,
 } from "./RecentEpisodesStyleContainer";
-import EpisodeContainer from "./EpisodeContainer";
-import { StyledImage } from "../podcast/PodcastStylesContainer";
-
-const HeaderImageContainer = styled.div`
-  display: flex;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  height: 40%;
-  width: 20%;
-  margin-top: 50px;
-  border-radius: 25px;
-  box-shadow: 2px 5px 30px black;
-`;
-const AddPodcastButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  align-items: center;
-  font-size: 1.2rem;
-  height: 30%;
-  width: 20%;
-  background-color: #484848;
-`;
-const FollowPodcastStylings = styled.input`
-  background-color: #404040;
-  font-size: 1.2rem;
-  border: 1px solid white;
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  box-shadow: 2px 5px 10px black;
-`;
-const FollowingContainer = styled.div`
-  display: flex;
-  font-size: 0.75rem;
-  margin-top: 10px;
-  margin-left: 20px;
-  background-color: #484848;
-`;
-const FollowingText = styled.h1``;
+import {
+  EpisodeContainer,
+  EpisodeAudioLinkContainer,
+  EpisodeDescriptionContainer,
+  EpisodeImage,
+  EpisodeTitle,
+  EpisodeStyledPlayLink,
+  EpisodeTitleContainer,
+} from "../../components/episode/EpisodeStylings";
+import { StyledImage } from "../../components/podcast/PodcastStyles";
 
 const RecentEpisodesContainer = () => {
   const { id } = useParams();
@@ -190,8 +154,8 @@ const RecentEpisodesContainer = () => {
                       </EpisodesHeaderStylings>
                     </EpisodesHeaderContainer>
                     <EpisodeContainer key={episode.id}>
-                      <HorizontalLineStylings />
-                      <TopEpisodeRowContainer>
+                      <EpisodeRowContainer>
+                        {/* <TopEpisodeRowContainer> */}
                         <EpisodeImage
                           alt="Not Availiable"
                           src={episode.image}
@@ -213,19 +177,26 @@ const RecentEpisodesContainer = () => {
                                     .replace(/<[^>]*>?/gm, "")}...`
                                 : episode.description}
                             </p>
-                            <AudioLinkContainer>
-                              <StyledPlayLink
+                            <EpisodeAudioLinkContainer>
+                              <EpisodeStyledPlayLink
                                 href={episode.audio}
                                 target="_blank"
                               >
                                 <FaPlayCircle size={30} />
-                              </StyledPlayLink>{" "}
-                            </AudioLinkContainer>
+                              </EpisodeStyledPlayLink>{" "}
+                            </EpisodeAudioLinkContainer>
                           </EpisodeDescriptionContainer>
                         </EpisodeTitleContainer>
-                      </TopEpisodeRowContainer>
-                      <HorizontalLineStylings />
+                        {/* </TopEpisodeRowContainer> */}
+                      </EpisodeRowContainer>
                     </EpisodeContainer>
+
+                    {/* <EpisodeContainer id={episode.id}>
+                      <TitleContainer>{episode.title} </TitleContainer>
+                      <ImageContainer> {episode.image} </ImageContainer>
+                      <p>{episode.description}</p>
+                      <a href={episode.audio}>Audio</a>
+                    </EpisodeContainer> */}
                   </div>
                 ) : (
                   <div style={{ padding: "0px 20px" }}>
@@ -251,18 +222,17 @@ const RecentEpisodesContainer = () => {
                                     .replace(/<[^>]*>?/gm, "")}...`
                                 : episode.description}
                             </p>
-                            <AudioLinkContainer>
-                              <StyledPlayLink
+                            <EpisodeAudioLinkContainer>
+                              <EpisodeStyledPlayLink
                                 href={episode.audio}
                                 target="_blank"
                               >
                                 <FaPlayCircle size={30} />
-                              </StyledPlayLink>{" "}
-                            </AudioLinkContainer>
+                              </EpisodeStyledPlayLink>{" "}
+                            </EpisodeAudioLinkContainer>
                           </EpisodeDescriptionContainer>
                         </EpisodeTitleContainer>
                       </EpisodeRowContainer>
-                      <HorizontalLineStylings />
                     </EpisodeContainer>
                   </div>
                 )}

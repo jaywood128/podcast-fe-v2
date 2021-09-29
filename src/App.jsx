@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import Home from "./views/Home";
+import Home from "./views/CuratedPodcasts/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
-import TopBar from "./components/header/TopBarContainer";
-import RecentEpisodesContainer from "./components/episode/RecentEpisodesContainer";
-import LibraryContainer from "./views/LibraryContainer";
+import TopBar from "./components/top-bar/TopBarContainer";
+import RecentEpisodesContainer from "./views/RecentEpisodes/RecentEpisodesContainer";
+import LibraryContainer from "./views/Library/LibraryContainer";
 // import SignIn from "./views/user-actions/SignIn";
 // import Signup from "./views/user-actions/Signup";
 

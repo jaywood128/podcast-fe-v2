@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PodcastContainer from "../components/podcast/PodcastContainer";
-import ViewContainerStylings from "./Body/ViewContainerStyling";
-import PodcastRowStylingsContainer from "../components/podcast/PodcastRowStylingsContainer";
+import PodcastContainer from "../../components/podcast/Podcast";
+import ViewContainerStylings from "../application/ApplicationContainerStyling";
+import LibraryContainerStylings from "./LibraryContainerStylings";
 
 const LibraryContainer = () => {
   const [podcasts, setPodcasts] = useState([]);
@@ -28,13 +28,13 @@ const LibraryContainer = () => {
   return (
     <ViewContainerStylings>
       <div>
-        <PodcastRowStylingsContainer>
+        <LibraryContainerStylings>
           {podcasts.map((podcast) => (
-            <div key={podcast.id}>
-              <PodcastContainer podcast={podcast} key={podcast.id} />
-            </div>
+            // <div key={podcast.id}>
+            <PodcastContainer podcast={podcast} key={podcast.id} />
+            // </div>
           ))}
-        </PodcastRowStylingsContainer>
+        </LibraryContainerStylings>
       </div>
     </ViewContainerStylings>
   );

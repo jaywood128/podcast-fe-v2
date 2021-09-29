@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ViewContainerStylings = styled.div`
+const ApplicationContainerStylings = styled.div`
   overflow: auto;
   background-color: #181818;
   height: 90vh;
@@ -9,4 +9,4 @@ const ViewContainerStylings = styled.div`
     display: none;
   }
 `;
-export default ViewContainerStylings;
+export default ApplicationContainerStylings;

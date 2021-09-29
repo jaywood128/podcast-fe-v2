@@ -9,27 +9,6 @@ const RecentEpisodesStyleContainer = styled.div`
   color: #ffffff;
 `;
 
-const EpisodeTitle = styled.h1`
-  padding: 1rem;
-  height: 16px;
-  text-align: start;
-  font-size: 20px;
-  font-family: "Gothic A1", sans-serif;
-  background-color: #404040;
-`;
-const EpisodeTitleContainer = styled.div`
-  margin-left: 10px;
-  color: white;
-`;
-
-const EpisodeImage = styled.img`
-  max-width: 100%;
-  width: 175px;
-  height: 175px;
-  border-radius: 20px;
-  box-shadow: 2px 5px 10px black;
-`;
-
 const EpisodeRowContainer = styled.div`
   display: flex;
   flex: 50%;
@@ -46,7 +25,7 @@ const EpisodeRowContainer = styled.div`
 `;
 
 const TopEpisodeRowContainer = styled.div`
-  display: flex;
+  /* display: flex;
   flex: 50%;
   align-items: center;
   font-family: "Raleway";
@@ -57,22 +36,14 @@ const TopEpisodeRowContainer = styled.div`
   border-radius: 20px;
   white-space: normal;
   background-color: #404040;
-  color: #b3b3b3;
-`;
-
-const HorizontalLineStylings = styled.div`
-  display: "block";
-  /* height: "1px"; */
-  border: "0";
-  /* border-top: "1px solid #FFFFF"; */
-  margin: "1em 0";
-  padding: "0";
+  color: #b3b3b3; */
 `;
 
 const EpisodesHeaderContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 5px 28px;
+  margin-bottom: 50px;
   align-items: center;
   color: white !important;
   font-family: "Gothic A1", sans-serif;
@@ -84,44 +55,56 @@ const EpisodesHeaderStylings = styled.div`
   text-shadow: 3px 4px 4px black;
   margin-left: 20px;
 `;
-const AudioLinkContainer = styled.div`
-  display: flex;
-  align-items: center;
-  width: 150px;
-  height: 80px;
-  background-color: #404040;
-`;
-const EpisodeDescriptionContainer = styled.div`
-  display: flex;
-  background-color: #404040;
-  flex-wrap: wrap;
-`;
-const StyledPlayLink = styled.a`
-  color: white;
-  text-align: left;
-  text-decoration: none;
-  border: 1.5px;
-  border-radius: 50%;
 
-  :hover {
-    background-color: rgba(64, 64, 64, 0.45);
-    -webkit-box-shadow: 3px 5px 24px grey; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow: 3px 5px 24px grey; /* Firefox 3.5 - 3.6 */
-    box-shadow: 3px 5px 24px grey;
-  }
+const HeaderImageContainer = styled.div`
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  margin-top: 50px;
+  border-radius: 25px;
+  box-shadow: 2px 5px 30px black;
 `;
+const AddPodcastButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 30%;
+  width: 20%;
+  background-color: #484848;
+`;
+const FollowPodcastStylings = styled.input`
+  background-color: #404040;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 2px 5px 10px black;
+`;
+const FollowingContainer = styled.div`
+  display: flex;
+  font-size: 0.75rem;
+  margin-top: 10px;
+  margin-left: 20px;
+  background-color: #484848;
+`;
+const FollowingText = styled.h1``;
 
 export {
   RecentEpisodesStyleContainer,
-  EpisodeTitle,
-  EpisodeImage,
   EpisodeRowContainer,
-  EpisodeDescriptionContainer,
-  HorizontalLineStylings,
   EpisodesHeaderContainer,
   EpisodesHeaderStylings,
-  AudioLinkContainer,
-  StyledPlayLink,
-  EpisodeTitleContainer,
   TopEpisodeRowContainer,
+  HeaderImageContainer,
+  AddPodcastButtonContainer,
+  FollowPodcastStylings,
+  FollowingContainer,
+  FollowingText,
 };

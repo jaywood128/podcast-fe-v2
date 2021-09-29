@@ -7,7 +7,7 @@ import {
   StyledImage,
   CardTop,
   StyledTitle,
-} from "./PodcastStylesContainer";
+} from "./PodcastStyles";
 
 const PodcastContainer = ({ podcast }) => (
   <PodcastStylesContainer

@@ -6,10 +6,11 @@ const PodcastStylesContainer = styled(Link)`
   color: white;
   text-decoration: none;
   background-color: #404040;
+  /* background-color: bisque; */
   border-radius: 6px;
-  margin: 10px 15px;
-  height: 60%;
-  width: 20%;
+  margin: 10px 30px;
+  width: 300px;
+  height: 300px;
 
   :hover {
     background-color: rgba(64, 64, 64, 0.45);
@@ -20,8 +21,8 @@ const PodcastStylesContainer = styled(Link)`
 `;
 const TitleContainer = styled.div`
   padding: 0.5rem;
-  /* background-color: red; */
   height: 25px;
+  width: 300px;
   text-align: center;
 `;
 const StyledTitle = styled.span`
@@ -32,8 +33,8 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
-  width: 80%;
+  height: 200px;
+  width: 200px;
   border-radius: 25px;
   box-shadow: 2px 2px 30px black;
 `;
@@ -42,8 +43,8 @@ ImageContainer.defaultProps = {
 };
 
 const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   border-radius: 25px;
 `;
 const CardTop = styled.div`
