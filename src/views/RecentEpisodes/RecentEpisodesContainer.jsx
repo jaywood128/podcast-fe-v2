@@ -1,8 +1,11 @@
 /* eslint-disable react/jsx-curly-brace-presence */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FaPlayCircle, FaCheckCircle } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import { FaPlayCircle, FaCheckCircle } from "react-icons/fa";
+import staticImage from "./the-one-you-feed.jpg";
+// FaCheckCircle
+
 // import UserService from "../../services/user.service";
 import ViewContainerStylings from "../application/ApplicationContainerStyling";
 import {
@@ -10,7 +13,6 @@ import {
   EpisodeRowContainer,
   EpisodesHeaderContainer,
   EpisodesHeaderStylings,
-  // TopEpisodeRowContainer,
   HeaderImageContainer,
   FollowingContainer,
   FollowingText,
@@ -30,6 +32,7 @@ import { StyledImage } from "../../components/podcast/PodcastStyles";
 
 const RecentEpisodesContainer = () => {
   const { id } = useParams();
+  // eslint-disable-next-line no-unused-vars
   const { podcastTitle } = useParams();
   const [episodes, setEpisodes] = useState([]);
   const BACKEND_PODCASTS = "http://127.0.0.1:8080/api";
@@ -38,6 +41,7 @@ const RecentEpisodesContainer = () => {
   // eslint-disable-next-line no-unused-vars
   const [isClicked, setIsClicked] = useState([]);
 
+  // eslint-disable-next-line no-unused-vars
   const handleFollowClick = () => {
     const bearer = `Bearer${localStorage.getItem("token")}`;
     const settings = {
@@ -117,6 +121,34 @@ const RecentEpisodesContainer = () => {
   }, []);
   return (
     <ViewContainerStylings>
+      <EpisodesHeaderContainer>
+        <HeaderImageContainer>
+          <StyledImage src={staticImage} alt="podcast" />{" "}
+        </HeaderImageContainer>
+
+        <EpisodesHeaderStylings>
+          {podcastTitle}
+
+          {isFollowingPodcast ? (
+            <FollowingContainer>
+              <FollowingText>Following</FollowingText>
+              <FaCheckCircle
+                color="green"
+                size={25}
+                style={{ marginTop: "30px", marginLeft: "10px" }}
+              />
+            </FollowingContainer>
+          ) : (
+            <AddPodcastButtonContainer>
+              <FollowPodcastStylings
+                type="button"
+                value="Follow"
+                onClick={handleFollowClick}
+              />
+            </AddPodcastButtonContainer>
+          )}
+        </EpisodesHeaderStylings>
+      </EpisodesHeaderContainer>
       <RecentEpisodesStyleContainer>
         {
           // eslint-disable-next-line arrow-body-style
@@ -124,38 +156,9 @@ const RecentEpisodesContainer = () => {
             return (
               <div key={episode.id}>
                 {index === 0 ? (
-                  <div style={{ padding: "0px 20px" }}>
-                    <EpisodesHeaderContainer>
-                      <HeaderImageContainer>
-                        <StyledImage src={episode.image} alt="podcast" />{" "}
-                      </HeaderImageContainer>
-
-                      <EpisodesHeaderStylings>
-                        {podcastTitle}
-
-                        {isFollowingPodcast ? (
-                          <FollowingContainer>
-                            <FollowingText>Following</FollowingText>
-                            <FaCheckCircle
-                              color="green"
-                              size={25}
-                              style={{ marginTop: "20px", marginLeft: "10px" }}
-                            />
-                          </FollowingContainer>
-                        ) : (
-                          <AddPodcastButtonContainer>
-                            <FollowPodcastStylings
-                              type="button"
-                              value="Follow"
-                              onClick={handleFollowClick}
-                            />
-                          </AddPodcastButtonContainer>
-                        )}
-                      </EpisodesHeaderStylings>
-                    </EpisodesHeaderContainer>
+                  <div style={{ padding: "0px" }}>
                     <EpisodeContainer key={episode.id}>
                       <EpisodeRowContainer>
-                        {/* <TopEpisodeRowContainer> */}
                         <EpisodeImage
                           alt="Not Availiable"
                           src={episode.image}
@@ -168,12 +171,11 @@ const RecentEpisodesContainer = () => {
                               style={{
                                 lineHeight: "30px",
                                 font: "#404040",
-                                margin: "20px",
                               }}
                             >
-                              {episode.description.length > 370
+                              {episode.description.length > 100
                                 ? `${episode.description
-                                    .substring(0, 370)
+                                    .substring(0, 100)
                                     .replace(/<[^>]*>?/gm, "")}...`
                                 : episode.description}
                             </p>
@@ -187,19 +189,11 @@ const RecentEpisodesContainer = () => {
                             </EpisodeAudioLinkContainer>
                           </EpisodeDescriptionContainer>
                         </EpisodeTitleContainer>
-                        {/* </TopEpisodeRowContainer> */}
                       </EpisodeRowContainer>
                     </EpisodeContainer>
-
-                    {/* <EpisodeContainer id={episode.id}>
-                      <TitleContainer>{episode.title} </TitleContainer>
-                      <ImageContainer> {episode.image} </ImageContainer>
-                      <p>{episode.description}</p>
-                      <a href={episode.audio}>Audio</a>
-                    </EpisodeContainer> */}
                   </div>
                 ) : (
-                  <div style={{ padding: "0px 20px" }}>
+                  <div style={{ padding: "0px" }}>
                     <EpisodeContainer key={episode.id}>
                       <EpisodeRowContainer>
                         <EpisodeImage
@@ -213,12 +207,11 @@ const RecentEpisodesContainer = () => {
                               style={{
                                 lineHeight: "30px",
                                 font: "#404040",
-                                margin: "20px",
                               }}
                             >
-                              {episode.description.length > 370
+                              {episode.description.length > 100
                                 ? `${episode.description
-                                    .substring(0, 370)
+                                    .substring(0, 100)
                                     .replace(/<[^>]*>?/gm, "")}...`
                                 : episode.description}
                             </p>

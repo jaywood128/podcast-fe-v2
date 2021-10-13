@@ -13,21 +13,21 @@ const VerticalNavBar = () => (
     <LinkContainer>
       <LinkList>
         <LinkItem>
-          <StyledLink to="/">
+          <StyledLink to="/search-results-container">
             <LinkIcon className="fas fa-search" />
             <span>Search</span>
           </StyledLink>
         </LinkItem>
 
         <LinkItem>
-          <StyledLink to="/library" bsClass="link">
+          <StyledLink to="/" bsClass="link">
             <LinkIcon className="fas fa-list" />
             <span>Shows</span>
           </StyledLink>
         </LinkItem>
 
         <LinkItem>
-          <StyledLink to="/">
+          <StyledLink to="/library">
             <LinkIcon className="fas fa-star" />
             <span>Library</span>
           </StyledLink>

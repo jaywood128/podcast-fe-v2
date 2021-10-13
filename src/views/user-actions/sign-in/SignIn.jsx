@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import authService from "../../services/auth.service";
+import authService from "../../../services/auth.service";
 
 import {
   SignInContainerStyles,

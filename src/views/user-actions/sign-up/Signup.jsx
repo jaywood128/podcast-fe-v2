@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import authService from "../../services/auth.service";
+import authService from "../../../services/auth.service";
 
 const Signup = () => {
   // eslint-disable-next-line no-unused-vars

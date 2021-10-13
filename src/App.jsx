@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Home from "./views/CuratedPodcasts/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
 import TopBar from "./components/top-bar/TopBarContainer";
 import RecentEpisodesContainer from "./views/RecentEpisodes/RecentEpisodesContainer";
 import LibraryContainer from "./views/Library/LibraryContainer";
+import Signup from "./views/user-actions/sign-up/Signup";
+import SearchResultsContainer from "./views/search-results/SearchResultsContainer";
 // import SignIn from "./views/user-actions/SignIn";
 // import Signup from "./views/user-actions/Signup";
 
@@ -42,6 +44,12 @@ function App() {
             </Route>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/sign-up">
+              <Signup />
+            </Route>
+            <Route exact path="/search-results-container">
+              <SearchResultsContainer />
             </Route>
           </Switch>
         </BodyContainer>

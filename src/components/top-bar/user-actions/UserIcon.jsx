@@ -1,7 +1,7 @@
 import React from "react";
 import { FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
-import AuthService from "../../services/auth.service";
-import UserService from "../../services/user.service";
+import AuthService from "../../../services/auth.service";
+import UserService from "../../../services/user.service";
 // import { LinkIcon } from "../vertical-nav-bar/VerticalNavBarStyles";
 import { UserIconLinkContainer, StyledUserLink } from "./UserIconStyles";
 

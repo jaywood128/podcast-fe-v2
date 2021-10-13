@@ -2,15 +2,17 @@ import styled from "styled-components";
 
 const EpisodeContainer = styled.div`
   display: flex;
+  height: 200px;
+  width: 700px;
   flex: 1;
   font-family: "Gothic A1, sans-serif";
 `;
 
 const EpisodeTitle = styled.h1`
   padding: 1rem;
-  height: 16px;
+  height: 5px;
   text-align: start;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Gothic A1", sans-serif;
   background-color: #404040;
 `;
@@ -21,8 +23,8 @@ const EpisodeTitleContainer = styled.div`
 
 const EpisodeImage = styled.img`
   max-width: 100%;
-  width: 175px;
-  height: 175px;
+  width: 150px;
+  height: 150px;
   border-radius: 20px;
   box-shadow: 2px 5px 10px black;
 `;
@@ -30,13 +32,15 @@ const EpisodeImage = styled.img`
 const EpisodeAudioLinkContainer = styled.div`
   display: flex;
   align-items: center;
-  width: 150px;
-  height: 80px;
+  width: 100px;
+  height: 20px;
   background-color: #404040;
 `;
 const EpisodeDescriptionContainer = styled.div`
   display: flex;
+  height: 125px;
   background-color: #404040;
+  font-size: 16px;
   flex-wrap: wrap;
 `;
 const EpisodeStyledPlayLink = styled.a`
