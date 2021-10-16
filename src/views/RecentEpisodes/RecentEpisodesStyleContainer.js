@@ -60,25 +60,53 @@ const AddPodcastButtonContainer = styled.div`
   font-size: 1.2rem;
   height: 30%;
   width: 20%;
-  background-color: #484848;
+  background-color: #404040;
 `;
 const FollowPodcastStylings = styled.input`
   font-size: 1.2rem;
   border: 1px solid white;
   color: white;
+  background-color: #404040;
   padding: 8px 16px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
   box-shadow: 2px 5px 10px black;
+  :hover {
+    background-color: rgba(64, 64, 64, 0.45);
+    -webkit-box-shadow: 3px 5px 24px grey; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 3px 5px 24px grey; /* Firefox 3.5 - 3.6 */
+    box-shadow: 3px 5px 24px grey;
+  }
 `;
+
 const FollowingContainer = styled.div`
   display: flex;
   font-size: 0.75rem;
   margin-top: 10px;
   margin-left: 20px;
 `;
-const FollowingText = styled.h1``;
+
+const FollowingText = styled.h1`
+  margin-top: 30px;
+`;
+const UnFollowPodcastStylings = styled.input`
+  font-size: 1.2rem;
+  border: 1px solid white;
+  color: white;
+  background-color: #404040;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 2px 5px 10px black;
+  :hover {
+    background-color: rgba(64, 64, 64, 0.45);
+    -webkit-box-shadow: 3px 5px 24px grey; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 3px 5px 24px grey; /* Firefox 3.5 - 3.6 */
+    box-shadow: 3px 5px 24px grey;
+  }
+`;
 
 export {
   RecentEpisodesStyleContainer,
@@ -90,4 +118,5 @@ export {
   FollowPodcastStylings,
   FollowingContainer,
   FollowingText,
+  UnFollowPodcastStylings,
 };

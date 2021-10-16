@@ -8,7 +8,6 @@ import {
 } from "./CuratedPodcastsStylings";
 
 const Home = () => {
-  // eslint-disable-next-line no-unused-vars
   const [featured, setFeatured] = useState([]);
 
   const getFeatured = () => {

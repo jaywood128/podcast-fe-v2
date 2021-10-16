@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { FaPlayCircle, FaCheckCircle } from "react-icons/fa";
-import staticImage from "./the-one-you-feed.jpg";
-// FaCheckCircle
-
 // import UserService from "../../services/user.service";
 import ViewContainerStylings from "../application/ApplicationContainerStyling";
 import {
@@ -15,9 +12,9 @@ import {
   EpisodesHeaderStylings,
   HeaderImageContainer,
   FollowingContainer,
-  FollowingText,
   AddPodcastButtonContainer,
   FollowPodcastStylings,
+  UnFollowPodcastStylings,
 } from "./RecentEpisodesStyleContainer";
 import {
   EpisodeContainer,
@@ -32,20 +29,18 @@ import { StyledImage } from "../../components/podcast/PodcastStyles";
 
 const RecentEpisodesContainer = () => {
   const { id } = useParams();
-  // eslint-disable-next-line no-unused-vars
   const { podcastTitle } = useParams();
   const [episodes, setEpisodes] = useState([]);
+  const [podcastImage, setPodcastImage] = useState([]);
   const BACKEND_PODCASTS = "http://127.0.0.1:8080/api";
   // eslint-disable-next-line no-unused-vars
-  const [isFollowingPodcast, setIsFollowingPodcast] = useState([]);
-  // eslint-disable-next-line no-unused-vars
-  const [isClicked, setIsClicked] = useState([]);
+  const [isFollowingPodcast, setIsFollowingPodcast] = useState(false);
 
   // eslint-disable-next-line no-unused-vars
-  const handleFollowClick = () => {
+  const handleFollow = () => {
     const bearer = `Bearer${localStorage.getItem("token")}`;
     const settings = {
-      method: "GET",
+      method: "POST",
       headers: {
         Authorization: bearer,
         "Content-Type": "application/json",
@@ -56,13 +51,44 @@ const RecentEpisodesContainer = () => {
         `${BACKEND_PODCASTS}/${localStorage.getItem("id")}/podcasts/${id}`,
         settings
       )
-      // eslint-disable-next-line no-console
-      .then((response) => setIsClicked(response.data))
+      .then((response) => {
+        // eslint-disable-next-line no-console
+        console.log(`Response after POST add podcast ${response.data}`);
+        if (response.data === "CREATED") {
+          setIsFollowingPodcast(true);
+        }
+      })
       .catch((error) => {
         // eslint-disable-next-line no-console
         console.log(error);
       });
   };
+
+  const handleUnFollow = () => {
+    const bearer = `Bearer${localStorage.getItem("token")}`;
+    const unFollowSettings = {
+      headers: {
+        Authorization: bearer,
+        "Content-Type": "application/json",
+      },
+    };
+
+    axios
+      .delete(
+        `${BACKEND_PODCASTS}/${localStorage.getItem("id")}/podcasts/${id}`,
+        unFollowSettings
+      )
+      .then((response) => {
+        setIsFollowingPodcast(false);
+        // eslint-disable-next-line no-console
+        console.log(`UnFollowed/delete podcast from library? ${response.data}`);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      });
+  };
+
   const getIsFollowingPodcast = () => {
     const bearer = `Bearer${localStorage.getItem("token")}`;
     const settings = {
@@ -81,8 +107,14 @@ const RecentEpisodesContainer = () => {
       )
       .then((response) => {
         // eslint-disable-next-line no-console
-        console.log(`Are we following? ${response.data}`);
-        setIsFollowingPodcast(response.data);
+        console.log(
+          `Are we following? GET isFollowingPodcast ${response.data}`
+        );
+        if (response.data === "true") {
+          setIsFollowingPodcast(true);
+        } else {
+          setIsFollowingPodcast(false);
+        }
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
@@ -105,6 +137,8 @@ const RecentEpisodesContainer = () => {
       .then((response) => {
         const episodesResponse = response.data[0].episodes;
         setEpisodes(episodesResponse);
+        setPodcastImage(episodesResponse[0].image);
+
         // eslint-disable-next-line no-console
         console.log(`Podcast id ${id}`);
       })
@@ -118,12 +152,12 @@ const RecentEpisodesContainer = () => {
     getEpisodes();
     getIsFollowingPodcast();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isFollowingPodcast]);
   return (
     <ViewContainerStylings>
       <EpisodesHeaderContainer>
         <HeaderImageContainer>
-          <StyledImage src={staticImage} alt="podcast" />{" "}
+          <StyledImage src={podcastImage} alt="podcast" />{" "}
         </HeaderImageContainer>
 
         <EpisodesHeaderStylings>
@@ -131,7 +165,11 @@ const RecentEpisodesContainer = () => {
 
           {isFollowingPodcast ? (
             <FollowingContainer>
-              <FollowingText>Following</FollowingText>
+              <UnFollowPodcastStylings
+                type="button"
+                value="Following"
+                onClick={handleUnFollow}
+              />
               <FaCheckCircle
                 color="green"
                 size={25}
@@ -143,7 +181,7 @@ const RecentEpisodesContainer = () => {
               <FollowPodcastStylings
                 type="button"
                 value="Follow"
-                onClick={handleFollowClick}
+                onClick={handleFollow}
               />
             </AddPodcastButtonContainer>
           )}
