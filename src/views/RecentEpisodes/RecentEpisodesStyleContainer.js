@@ -59,12 +59,14 @@ const AddPodcastButtonContainer = styled.div`
   align-items: center;
   font-size: 1.2rem;
   height: 30%;
-  width: 20%;
+  width: 30%;
   background-color: #404040;
 `;
 const FollowPodcastStylings = styled.input`
   font-size: 1.2rem;
   border: 1px solid white;
+  width: 130px;
+  height: 40px;
   color: white;
   background-color: #404040;
   padding: 8px 16px;
@@ -82,9 +84,12 @@ const FollowPodcastStylings = styled.input`
 
 const FollowingContainer = styled.div`
   display: flex;
-  font-size: 0.75rem;
-  margin-top: 10px;
-  margin-left: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 30%;
+  width: 30%;
 `;
 
 const FollowingText = styled.h1`
@@ -93,6 +98,8 @@ const FollowingText = styled.h1`
 const UnFollowPodcastStylings = styled.input`
   font-size: 1.2rem;
   border: 1px solid white;
+  width: 130px;
+  height: 40px;
   color: white;
   background-color: #404040;
   padding: 8px 16px;

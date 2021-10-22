@@ -23,15 +23,40 @@ import {
   SearchInput,
   SearchIconContainer,
 } from "./SearchStyles";
+// eslint-disable-next-line no-unused-vars
+import typeAheadData from "../../data/type-ahead";
+import TypeAheadContainer from "../../components/search/type-ahead/TypeAheadContainer";
 
 // eslint-disable-next-line arrow-body-style
 const SearchResultsContainer = () => {
+  // const { data } = TypeAheadData;
   const [searchField, setSearchField] = useState({
     textInput: "",
   });
 
   const [results, setResults] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [typeAheadResults, setTypeAheadResults] = useState([]);
   const BACKEND_PODCASTS = "http://127.0.0.1:8080/api";
+
+  // async function typeAheadCall() {
+  //   // eslint-disable-next-line no-console
+  //   console.log(`Searching for character: ${searchField.textInput}`);
+  //   axios
+  //     .post(`${BACKEND_PODCASTS}/type-ahead-search`, {
+  //       textInput: searchField.textInput,
+  //     })
+  //     // eslint-disable-next-line no-console
+  //     .then((response) => {
+  //       setTypeAheadResults(response.data.results);
+  //       // eslint-disable-next-line no-console
+  //       console.log(`Type ahead results: ${JSON.stringify(response)}`);
+  //     })
+  //     .catch((error) => {
+  //       // eslint-disable-next-line no-console
+  //       console.log(error);
+  //     });
+  // }
 
   const handleChange = (e) => {
     // eslint-disable-next-line no-console
@@ -41,6 +66,9 @@ const SearchResultsContainer = () => {
       ...userInputSearch,
       [e.target.name]: e.target.value,
     }));
+    if (searchField.textInput !== "") {
+      // typeAheadCall();
+    }
   };
 
   const setInitalResultsState = () => {
@@ -78,6 +106,13 @@ const SearchResultsContainer = () => {
         console.log(error);
       });
   }
+  const displayTypeAheadDropDown = () => {
+    // if (searchField.textInput !== "") {
+    //   return <TypeAheadContainer TypeAheadData={data} />;
+    // }
+    // return <div>Empty</div>;
+    console.log(`Type ahead data ${JSON.stringify(typeAheadData)}`);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -112,9 +147,13 @@ const SearchResultsContainer = () => {
           </form>
         </SearchInputContainer>
       </SearchStyles>
+      {displayTypeAheadDropDown()}
+      <TypeAheadContainer typeAheadData={typeAheadData} />
       <SearchResultsContainerStyles>
         {results.length === 0 ? (
-          <h1>Search results go here</h1>
+          <h1 style={{ fontFamily: "Gothic A1, sans-serif" }}>
+            Search results go here
+          </h1>
         ) : (
           results.map((episode) => (
             <EpisodeSearchResultsContainer key={episode.id}>

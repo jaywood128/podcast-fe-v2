@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 const SearchStyles = styled.div`
   display: flex;
-  /* background-color: #404040; */
-  background-color: yellow;
+  background-color: #404040;
   margin-top: 100px;
   width: auto;
   align-items: center;
@@ -11,7 +10,7 @@ const SearchStyles = styled.div`
 `;
 
 const SearchInput = styled.input`
-  width: 300px;
+  width: 350px;
   height: 30px;
   /* border-radius: 20px; */
   border-top-style: hidden;
@@ -32,7 +31,7 @@ const SearchInputContainer = styled.div`
   width: 500px;
   padding: 0 8px;
   height: 50px;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: white;
 `;
 const SearchIconContainer = styled.div`

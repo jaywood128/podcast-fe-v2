@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { FaPlayCircle, FaCheckCircle } from "react-icons/fa";
+// FaCheckCircle
 // import UserService from "../../services/user.service";
 import ViewContainerStylings from "../application/ApplicationContainerStyling";
 import {
@@ -110,7 +111,7 @@ const RecentEpisodesContainer = () => {
         console.log(
           `Are we following? GET isFollowingPodcast ${response.data}`
         );
-        if (response.data === "true") {
+        if (response.data) {
           setIsFollowingPodcast(true);
         } else {
           setIsFollowingPodcast(false);
@@ -173,17 +174,19 @@ const RecentEpisodesContainer = () => {
               <FaCheckCircle
                 color="green"
                 size={25}
-                style={{ marginTop: "30px", marginLeft: "10px" }}
+                style={{ marginBottom: "3px", marginLeft: "10px" }}
               />
             </FollowingContainer>
           ) : (
-            <AddPodcastButtonContainer>
-              <FollowPodcastStylings
-                type="button"
-                value="Follow"
-                onClick={handleFollow}
-              />
-            </AddPodcastButtonContainer>
+            <div>
+              <AddPodcastButtonContainer>
+                <FollowPodcastStylings
+                  type="button"
+                  value="Follow"
+                  onClick={handleFollow}
+                />
+              </AddPodcastButtonContainer>
+            </div>
           )}
         </EpisodesHeaderStylings>
       </EpisodesHeaderContainer>

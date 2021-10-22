@@ -6,7 +6,6 @@ const PodcastStylesContainer = styled(Link)`
   color: white;
   text-decoration: none;
   background-color: #404040;
-  /* background-color: bisque; */
   border-radius: 6px;
   margin: 10px 30px;
   width: 300px;
