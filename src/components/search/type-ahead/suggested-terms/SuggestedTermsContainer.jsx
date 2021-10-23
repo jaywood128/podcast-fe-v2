@@ -1,12 +1,20 @@
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import SuggestedTermsContainerStyles from "./SuggestedTermsContainerStyles";
+import {
+  SuggestedTermsConatinerStylings,
+  SuggestedTermStylings,
+  SuggestedTermLink,
+} from "./SuggestedTermsContainerStyles";
 
 const SuggestedTermsContainer = (props) => (
-  <SuggestedTermsContainerStyles>
-    {" "}
-    Suggested Terms {props.terms[0]}
-  </SuggestedTermsContainerStyles>
+  <SuggestedTermsConatinerStylings>
+    {props.terms.map((term) => (
+      <SuggestedTermStylings key={term}>
+        {" "}
+        <SuggestedTermLink key={term}> {term}</SuggestedTermLink>{" "}
+      </SuggestedTermStylings>
+    ))}
+  </SuggestedTermsConatinerStylings>
 );
 
 export default SuggestedTermsContainer;

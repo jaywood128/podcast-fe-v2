@@ -2,21 +2,24 @@ import styled from "styled-components";
 
 const SearchStyles = styled.div`
   display: flex;
-  background-color: #404040;
-  margin-top: 100px;
-  width: auto;
-  align-items: center;
-  justify-content: center;
+  /* background-color: #404040; */
+  background-color: orange;
+  width: 100%;
+  justify-content: flex-start;
+  /* width: auto; */
+  /* height: 100%; */
+  margin-left: 75px;
 `;
 
 const SearchInput = styled.input`
-  width: 350px;
+  width: 900px;
   height: 30px;
-  /* border-radius: 20px; */
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   border: none;
   background-color: white;
   :focus {
@@ -25,21 +28,24 @@ const SearchInput = styled.input`
 `;
 const SearchInputContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   font-size: 16px;
-  align-items: center;
   font-family: "Raleway";
-  width: 500px;
-  padding: 0 8px;
+  width: 100%;
+  padding: 15px 8px;
   height: 50px;
-  border-radius: 5px;
-  background-color: white;
+  background-color: #404040;
+  border-radius: 10px;
 `;
 const SearchIconContainer = styled.div`
   display: flex;
   background-color: white;
   align-items: center;
   justify-content: center;
+  height: 30px;
   width: 50px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 `;
 
 export { SearchStyles, SearchInput, SearchInputContainer, SearchIconContainer };

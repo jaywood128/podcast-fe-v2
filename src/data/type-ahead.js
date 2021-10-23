@@ -69,8 +69,14 @@ const typeAheadData = [
         explicit_content: false,
       },
     ],
-    terms: ["Murder Porn", "Mystery"],
-    genres: [{ id: 135, name: "True Crime", parent_id: 67 }],
+    terms: ["Mystery", "Mystery", "Mystery", "Murder She Wrote", "Mystery"],
+    genres: [
+      { id: 135, name: "True Crime", parent_id: 67 },
+      { id: 135, name: "True Crime", parent_id: 67 },
+      { id: 135, name: "True Crime", parent_id: 67 },
+      { id: 135, name: "True Crime", parent_id: 67 },
+      { id: 135, name: "True Crime", parent_id: 67 },
+    ],
   },
 ];
 export default typeAheadData;

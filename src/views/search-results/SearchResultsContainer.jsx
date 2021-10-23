@@ -145,10 +145,11 @@ const SearchResultsContainer = () => {
               on
             />
           </form>
+          <TypeAheadContainer typeAheadData={typeAheadData} />
         </SearchInputContainer>
       </SearchStyles>
       {displayTypeAheadDropDown()}
-      <TypeAheadContainer typeAheadData={typeAheadData} />
+
       <SearchResultsContainerStyles>
         {results.length === 0 ? (
           <h1 style={{ fontFamily: "Gothic A1, sans-serif" }}>

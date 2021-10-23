@@ -1,11 +1,23 @@
 import styled from "styled-components";
 
 const TypeAheadContainerStyles = styled.div`
-  width: 515px;
-  height: 350px;
-  margin-left: 510px;
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
+  height: 650px;
+  width: 935px;
+  padding: 0 8px;
+  margin-left: 0px;
   background-color: white;
 `;
 
-export default TypeAheadContainerStyles;
+const HorizontalLine = styled.div`
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0.5em 0;
+  padding: 0;
+`;
+
+export { TypeAheadContainerStyles, HorizontalLine };

@@ -7,10 +7,16 @@ import {
   LinkIcon,
   StyledLink,
 } from "./VerticalNavBarStyles";
+import { TitleLink, IconContainer } from "../top-bar/TopBarStylesContainer";
 // import { Link } from 'react-router-dom';
 const VerticalNavBar = () => (
   <VerticalNavBarContainer>
     <LinkContainer>
+      <TitleLink to="/">
+        <IconContainer>
+          <i className="fas fa-podcast fa-1x" />
+        </IconContainer>{" "}
+      </TitleLink>
       <LinkList>
         <LinkItem>
           <StyledLink to="/search-results-container">

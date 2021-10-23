@@ -1,28 +1,33 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import styled from "styled-components";
-import SuggestedPodcastsContainerStyles from "./SuggestedPodcastContainerStylings";
-
-const SuggestedPodcastStyles = styled.div`
-  display: flex;
-`;
-const SuggestedPodcastImageStyles = styled.img``;
-const SuggestedPodcastPublisher = styled.h1``;
+import {
+  SuggestedPodcastsContainerStyles,
+  SuggestPocastImageContainer,
+  SuggestedPodcastStyles,
+  SuggestedPodcastImageStyles,
+  SuggestedPodcastPublisher,
+  SuggestedPodcastTitle,
+  SuggestedPodcastTitleContainer,
+} from "./SuggestedPodcastContainerStylings";
 
 const SuggestedPodcasts = (props) => (
   <SuggestedPodcastsContainerStyles>
     {props.podcasts.map((podcast) => {
       return (
         <SuggestedPodcastStyles key={podcast.id}>
-          <SuggestedPodcastImageStyles src={podcast.image} />
-          <SuggestedPodcastStyles>
-            {" "}
-            {podcast.title_original}
-          </SuggestedPodcastStyles>
-          <SuggestedPodcastPublisher>
-            {podcast.publisher_original}
-          </SuggestedPodcastPublisher>
+          <SuggestPocastImageContainer>
+            <SuggestedPodcastImageStyles src={podcast.image} />
+          </SuggestPocastImageContainer>
+          <SuggestedPodcastTitleContainer>
+            <SuggestedPodcastTitle>
+              {" "}
+              {podcast.title_original}
+            </SuggestedPodcastTitle>
+            <SuggestedPodcastPublisher>
+              <h3>{podcast.publisher_original} </h3>
+            </SuggestedPodcastPublisher>
+          </SuggestedPodcastTitleContainer>
         </SuggestedPodcastStyles>
       );
     })}
