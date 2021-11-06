@@ -11,7 +11,7 @@ const SuggestedTermsContainer = (props) => (
     {props.terms.map((term) => (
       <SuggestedTermStylings key={term}>
         {" "}
-        <SuggestedTermLink key={term}> {term}</SuggestedTermLink>{" "}
+        <SuggestedTermLink> {term}</SuggestedTermLink>{" "}
       </SuggestedTermStylings>
     ))}
   </SuggestedTermsConatinerStylings>

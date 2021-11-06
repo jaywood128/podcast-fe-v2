@@ -25,8 +25,23 @@ import {
 } from "./SearchStyles";
 // eslint-disable-next-line no-unused-vars
 import typeAheadData from "../../data/type-ahead";
-import TypeAheadContainer from "../../components/search/type-ahead/TypeAheadContainer";
-
+import {
+  TypeAheadContainerStyles,
+  HorizontalLine,
+} from "../../components/search/type-ahead/TypeAheadContainerStyles";
+import {
+  SuggestedTermsConatinerStylings,
+  SuggestedTermStylings,
+  // SuggestedTermLink,
+} from "../../components/search/type-ahead/suggested-terms/SuggestedTermsContainerStyles";
+import {
+  BrowseByGenre,
+  SuggestedPodcastsTitle,
+  // SuggestedGenreStylings,
+  // SuggestedGenreLink,
+} from "../../components/search/type-ahead/suggested-genres/SuggestedGenresContainerStyles";
+import SuggestedGenres from "../../components/search/type-ahead/suggested-genres/SuggestedGenresContainer";
+import SuggestedPodcastsContainer from "../../components/search/type-ahead/suggested-podcasts/SuggestedPostcastsContainer";
 // eslint-disable-next-line arrow-body-style
 const SearchResultsContainer = () => {
   // const { data } = TypeAheadData;
@@ -57,19 +72,6 @@ const SearchResultsContainer = () => {
   //       console.log(error);
   //     });
   // }
-
-  const handleChange = (e) => {
-    // eslint-disable-next-line no-console
-    console.log(e.target.value);
-    e.persist();
-    setSearchField((userInputSearch) => ({
-      ...userInputSearch,
-      [e.target.name]: e.target.value,
-    }));
-    if (searchField.textInput !== "") {
-      // typeAheadCall();
-    }
-  };
 
   const setInitalResultsState = () => {
     setResults([]);
@@ -106,27 +108,52 @@ const SearchResultsContainer = () => {
         console.log(error);
       });
   }
-  const displayTypeAheadDropDown = () => {
-    // if (searchField.textInput !== "") {
-    //   return <TypeAheadContainer TypeAheadData={data} />;
-    // }
-    // return <div>Empty</div>;
-    console.log(`Type ahead data ${JSON.stringify(typeAheadData)}`);
-  };
 
-  const handleSubmit = (e) => {
+  const handleSearchInputChange = (e) => {
     e.preventDefault();
     if (results.length > 0) {
       setInitalResultsState();
     }
     alert(searchField.textInput);
     postSearch();
-    e.target.reset();
+    // e.target.reset();
+  };
+
+  const handleSearchInputSubmit = (e) => {
+    // eslint-disable-next-line no-console
+    console.log(`Handle Search input submit ${e.target.value}`);
+    e.persist();
+    setSearchField((userInputSearch) => ({
+      ...userInputSearch,
+      [e.target.name]: e.target.value,
+    }));
+    if (searchField.textInput !== "") {
+      // typeAheadCall();
+    }
+  };
+
+  const handleSuggestedTermClick = (e) => {
+    // eslint-disable-next-line no-alert
+    alert(`Suggested term clicked!${e.target}`);
+    // eslint-disable-next-line no-console
+    console.log(`Suggested term clicked name!${JSON.stringify(e.target.name)}`);
+    const { value, name } = e.target;
+    setSearchField((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    // eslint-disable-next-line no-console
+    console.log(
+      `Updated search field state for suggested term ${JSON.stringify(
+        searchField
+      )}`
+    );
   };
 
   useEffect(() => {
+    postSearch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [results]);
+  }, [results, searchField]);
 
   return (
     <ApplicationContainerStylings>
@@ -135,20 +162,41 @@ const SearchResultsContainer = () => {
           <SearchIconContainer>
             <BsSearch size={30} className="fas fa-search" />
           </SearchIconContainer>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSearchInputSubmit}>
             <SearchInput
               name="textInput"
               type="search"
               value={searchField.textInput}
               placeholder="Search for content"
-              onChange={handleChange}
+              onChange={handleSearchInputChange}
               on
             />
           </form>
-          <TypeAheadContainer typeAheadData={typeAheadData} />
+          <TypeAheadContainerStyles>
+            <SuggestedTermsConatinerStylings>
+              {typeAheadData[0].terms.map((term) => (
+                <SuggestedTermStylings key={term}>
+                  <button
+                    type="button"
+                    value={term}
+                    name="textInput"
+                    // eslint-disable-next-line no-alert
+                    onClick={handleSuggestedTermClick}
+                  >
+                    {term}
+                  </button>
+                </SuggestedTermStylings>
+              ))}
+            </SuggestedTermsConatinerStylings>
+            <HorizontalLine />
+            <BrowseByGenre>BROWSE BY CATEGORY</BrowseByGenre>
+            <SuggestedGenres genres={typeAheadData[0].genres} />
+            <HorizontalLine />
+            <SuggestedPodcastsTitle>PODCASTS</SuggestedPodcastsTitle>
+            <SuggestedPodcastsContainer podcasts={typeAheadData[0].podcasts} />
+          </TypeAheadContainerStyles>
         </SearchInputContainer>
       </SearchStyles>
-      {displayTypeAheadDropDown()}
 
       <SearchResultsContainerStyles>
         {results.length === 0 ? (

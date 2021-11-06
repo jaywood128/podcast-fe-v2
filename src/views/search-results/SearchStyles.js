@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 const SearchStyles = styled.div`
   display: flex;
-  /* background-color: #404040; */
-  background-color: orange;
+  background-color: #404040;
   width: 100%;
   justify-content: flex-start;
   /* width: auto; */

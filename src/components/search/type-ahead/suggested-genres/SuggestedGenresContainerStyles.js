@@ -16,6 +16,10 @@ const SuggestedGenreStylings = styled.div`
   width: 100%;
   border-radius: 5px;
   background-color: white;
+
+  a:hover {
+    color: grey;
+  }
 `;
 
 const SuggestedGenreLink = styled(Link)`
@@ -24,9 +28,10 @@ const SuggestedGenreLink = styled(Link)`
   width: 100%;
   font-size: 0.85rem;
   font-weight: bold;
-  padding: 30px 20px;
+  padding: 0px 20px;
   text-decoration: none;
   text-shadow: 2px 2px 10px white;
+  border-color: black;
 `;
 const BrowseByGenre = styled.h1`
   font-size: 1rem;

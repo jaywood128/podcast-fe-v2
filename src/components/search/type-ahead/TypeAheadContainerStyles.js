@@ -4,7 +4,7 @@ const TypeAheadContainerStyles = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  height: 650px;
+  height: 800px;
   width: 935px;
   padding: 0 8px;
   margin-left: 0px;

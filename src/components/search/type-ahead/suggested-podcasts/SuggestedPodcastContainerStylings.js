@@ -1,46 +1,60 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const SuggestedPodcastsContainerStyles = styled(Link)`
+const SuggestedPodcastsContainerStyles = styled.div`
   border-radius: 5px;
   background-color: white;
   text-decoration: none;
+  margin-left: 17px;
+`;
+
+const SuggestedPodcastContainer = styled.div`
+  div:hover {
+    color: grey;
+  }
 `;
 const SuggestPocastImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  width: 50px;
+  width: 350px;
+  margin-top: 12px;
+  margin-left: 8px;
   border-radius: 25px;
 `;
 const SuggestedPodcastStyles = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 800px;
-  height: 50px;
-  /* background-color: blue;
-  border: 1px solid black; */
+  height: 80px;
+  background-color: white;
+  /* border: solid; */
+  a:hover {
+    color: grey;
+  }
+`;
+const SuggestedPodcastLink = styled(Link)`
+  background-color: white;
 `;
 const SuggestedPodcastTitleContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: white;
-  height: 40px;
-  width: 100%;
+  margin-left: 15px;
 `;
-const SuggestedPodcastTitle = styled.h2`
+const SuggestedPodcastTitle = styled.div`
   width: 100%;
-  /* padding: 15px 15px; */
-  margin-top: 0px;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   background-color: white;
 `;
 
 const SuggestedPodcastPublisher = styled.div`
   display: flex;
   align-items: center;
+  text-align: center;
+  height: 10px;
   width: 100%;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   background-color: white;
 `;
 
@@ -57,4 +71,6 @@ export {
   SuggestedPodcastPublisher,
   SuggestedPodcastTitle,
   SuggestedPodcastTitleContainer,
+  SuggestedPodcastContainer,
+  SuggestedPodcastLink,
 };
