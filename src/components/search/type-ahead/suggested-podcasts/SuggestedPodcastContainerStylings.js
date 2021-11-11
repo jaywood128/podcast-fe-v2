@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 
 const SuggestedPodcastsContainerStyles = styled.div`
   border-radius: 5px;
+  height: auto;
   background-color: white;
   text-decoration: none;
   margin-left: 17px;
 `;
 
 const SuggestedPodcastContainer = styled.div`
+  height: 60px;
+  /* border: solid; */
   div:hover {
     color: grey;
   }
@@ -17,19 +20,17 @@ const SuggestPocastImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
   height: 50px;
-  width: 350px;
+  width: 300px;
   margin-top: 12px;
-  margin-left: 8px;
+  margin-left: 5px;
   border-radius: 25px;
 `;
 const SuggestedPodcastStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
-  height: 80px;
-  background-color: white;
-  /* border: solid; */
+  height: 65px;
   a:hover {
     color: grey;
   }
@@ -43,8 +44,7 @@ const SuggestedPodcastTitleContainer = styled.div`
   margin-left: 15px;
 `;
 const SuggestedPodcastTitle = styled.div`
-  width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   background-color: white;
 `;
 
@@ -52,8 +52,8 @@ const SuggestedPodcastPublisher = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+  margin-bottom: 15px;
   height: 10px;
-  width: 100%;
   font-size: 0.8rem;
   background-color: white;
 `;

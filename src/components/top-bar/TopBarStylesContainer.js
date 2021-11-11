@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const TopBarStylesContainer = styled.header`
-  /* background-color: #181818; */
-  background-color: #404040;
+const TopBarStylesContainer = styled.div`
+  background-color: pink;
   display: flex;
   justify-content: center;
   justify-content: space-between;

@@ -11,7 +11,7 @@ const SearchStyles = styled.div`
 `;
 
 const SearchInput = styled.input`
-  width: 900px;
+  width: 600px;
   height: 30px;
   border-top-style: hidden;
   border-right-style: hidden;
@@ -20,7 +20,7 @@ const SearchInput = styled.input`
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   border: none;
-  background-color: white;
+  background-color: green;
   :focus {
     outline: none;
   }
@@ -29,7 +29,7 @@ const SearchInputContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   font-size: 16px;
-  font-family: "Raleway";
+  font-family: "Roboto Mono";
   width: 100%;
   padding: 15px 8px;
   height: 50px;

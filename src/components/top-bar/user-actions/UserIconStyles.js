@@ -18,7 +18,7 @@ const StyledUserLink = styled(Link)`
   text-decoration: none;
   padding: 20px 20px;
   font-size: 1.2rem !important;
-  font-family: "Raleway";
+  font-family: "Roboto Mono";
   border-radius: 30%;
   border: 1.5px;
   margin: 10px 15px;

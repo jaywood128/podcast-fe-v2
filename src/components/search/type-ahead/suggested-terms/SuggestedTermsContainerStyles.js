@@ -7,6 +7,7 @@ const SuggestedTermsConatinerStylings = styled.div`
   margin-top: 10px;
   font-family: "Gothic A1, sans-serif";
   border-radius: 5px;
+  background-color: white;
 `;
 
 const SuggestedTermStylings = styled.div`

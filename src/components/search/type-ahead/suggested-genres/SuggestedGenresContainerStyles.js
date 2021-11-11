@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 const SuggestedGenresContainerStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 800px;
-  font-family: "Gothic A1, sans-serif";
+  width: 100%;
   border-radius: 5px;
   background-color: white;
 `;
@@ -35,14 +33,14 @@ const SuggestedGenreLink = styled(Link)`
 `;
 const BrowseByGenre = styled.h1`
   font-size: 1rem;
-  font-family: "Gothic A1, sans-serif";
+  /* font-family: "Gothic A1, sans-serif"; */
   color: grey;
   margin-left: 15px;
 `;
 
 const SuggestedPodcastsTitle = styled.h1`
   font-size: 1rem;
-  font-family: "Gothic A1, sans-serif";
+  /* font-family: "Gothic A1, sans-serif"; */
   color: grey;
   margin-left: 15px;
 `;

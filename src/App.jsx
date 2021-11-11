@@ -4,7 +4,6 @@ import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Home from "./views/CuratedPodcasts/Home";
 import VerticalNavBar from "./components/vertical-nav-bar/VerticalNavBar";
-import TopBar from "./components/top-bar/TopBarContainer";
 import RecentEpisodesContainer from "./views/RecentEpisodes/RecentEpisodesContainer";
 import LibraryContainer from "./views/Library/LibraryContainer";
 import Signup from "./views/user-actions/sign-up/Signup";
@@ -34,7 +33,6 @@ function App() {
       <AppContainer>
         <VerticalNavBar />
         <BodyContainer>
-          <TopBar />
           <Switch>
             <Route path="/episodes/:podcastTitle/:id">
               <RecentEpisodesContainer />

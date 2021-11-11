@@ -5,5 +5,6 @@ const PodcastGridStylingsContainer = styled.div`
   flex-wrap: wrap;
   overflow: auto;
   margin-left: 20px;
+  font-family: "Roboto Mono";
 `;
 export default PodcastGridStylingsContainer;

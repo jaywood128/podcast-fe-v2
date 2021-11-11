@@ -3,12 +3,13 @@ import styled from "styled-components";
 const TypeAheadContainerStyles = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: "Roboto Mono";
   border-radius: 5px;
-  height: 800px;
-  width: 935px;
+  height: 750px;
+  width: 650px;
   padding: 0 8px;
   margin-left: 0px;
-  background-color: white;
+  background-color: purple;
 `;
 
 const HorizontalLine = styled.div`

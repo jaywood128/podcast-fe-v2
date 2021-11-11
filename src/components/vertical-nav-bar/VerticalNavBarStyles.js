@@ -8,7 +8,7 @@ const VerticalNavBarContainer = styled("div")`
   width: 20vw;
   display: flex;
   flex-direction: column;
-  font-family: "Gothic A1", sans-serif;
+  font-family: "Roboto Mono";
   font-size: 1.2rem;
 `;
 
